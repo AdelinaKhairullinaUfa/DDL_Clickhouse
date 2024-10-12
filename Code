@@ -3,7 +3,7 @@ CREATE TABLE Hub_Customer (
     Customer_ID UInt64,
     Segment String,
     Load_Datetime DateTime DEFAULT now()
-) ENGINE = MergeTree() 
+) ENGINE = MergeTree()
 ORDER BY Customer_ID;
 
 -- Таблица хаба для географии
@@ -15,7 +15,7 @@ CREATE TABLE Hub_Geography (
     Postal_Code String,
     Region String,
     Load_Datetime DateTime DEFAULT now()
-) ENGINE = MergeTree() 
+) ENGINE = MergeTree()
 ORDER BY Geography_ID;
 
 -- Таблица хаба для продуктов
@@ -24,7 +24,7 @@ CREATE TABLE Hub_Product (
     Category String,
     Sub_Category String,
     Load_Datetime DateTime DEFAULT now()
-) ENGINE = MergeTree() 
+) ENGINE = MergeTree()
 ORDER BY Product_ID;
 
 -- Таблица хаба для доставки
@@ -32,7 +32,7 @@ CREATE TABLE Hub_Shipment (
     Shipment_ID UInt64,
     Ship_Mode String,
     Load_Datetime DateTime DEFAULT now()
-) ENGINE = MergeTree() 
+) ENGINE = MergeTree()
 ORDER BY Shipment_ID;
 
 -- Таблица хаба для транзакций
@@ -40,7 +40,7 @@ CREATE TABLE Hub_Transaction (
     Transaction_ID UInt64,
     Transaction_Date Date,
     Load_Datetime DateTime DEFAULT now()
-) ENGINE = MergeTree() 
+) ENGINE = MergeTree()
 ORDER BY Transaction_ID;
 
 -- Таблицы связей (Links)
@@ -108,3 +108,5 @@ CREATE TABLE Satellite_Transaction (
     Timestamp DateTime DEFAULT now()
 ) ENGINE = MergeTree()
 ORDER BY Transaction_ID;
+
+SHOW TABLES
